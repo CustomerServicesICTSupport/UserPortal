@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In - ICT User Portal</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign In to ICT User Portal</h2>
+        <form id="signInForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+            <button type="submit">Sign In</button>
+        </form>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        // Simple sign-in script
+        document.getElementById("signInForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Example credentials (you can replace these with your own authentication system)
+            if (username === "admin" && password === "password123") {
+                window.location.href = "dashboard.html"; // Redirect to dashboard after successful login
+            } else {
+                document.getElementById("error-message").textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>
